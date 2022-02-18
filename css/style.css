@@ -1,0 +1,222 @@
+/*****공통*****/
+*{padding:0; margin:0;}
+ul{list-style: none;}
+a{color:inherit; text-decoration:none;}
+
+.inner{width:1000px;  margin:0 auto;}
+
+/***************************왼쪽_네비/오른쪽******************************************/
+/*.w_left{width:200px; float: left; }
+.w_right{width:50%; float:left;}*//*화면이작아지면 메뉴아래로 겹쳐지게 하기위해포지션을 써보려고 한다. float하면 메뉴li는 글자가 밑으로 떨어지고, 메뉴부분의 이미지가 밑으로 들어가게된다.*/
+
+#wrap{position:relative;}
+.menu li{border-bottom: 1px solid #ddd; padding:15px; padding-left:50px; box-sizing: border-box;}
+.banner{border-bottom: 1px solid #aaa; padding:10px; margin:20px;}
+.banner li{float:left;   width:50%; box-sizing:border-box; border-right:1px solid #ddd;  }
+.banner li:nth-child(2){border:none; padding-left:10px;}
+/*.banner li:nth-child(2) img{ width:30%; }*/
+/*.banner > img 하면 banner 바로 밑의 자식인 img인데 banner 바로 밑의 자식이 img가 아니므로 꺽쇠를 쓰면 안된다.*/
+.banner img{height:30px;}
+.banner::after, .banner::before{clear:both; content: ""; display: block;}
+.w_left .logo{background-color: purple;  text-align: center;}
+.w_left .logo img{width:80%; padding:40px 0; box-sizing: border-box;}
+.w_left{position: absolute; width:200px; left:0;  z-index: 5; box-shadow:  2px 0 10px rgba(0,0,0,0.5 ); height:1300px; }
+/*box-shadow:x축수 y축수 퍼짐수치*/
+.w_left p{ text-align: center; color: rgb(73, 73, 73);}
+
+/*.menu li{float: left; width: calc(100% / 7); border:1px solid red; box-sizing: border-box;}*//*사칙연산연습_나누기*/
+
+
+/*************************************main_img******************************************************/
+
+.w_right{position:absolute; width: calc(100% - 200px); right:0; }
+.main_img{height:500px; width:100%; background-color: rgb(248, 215, 236)}
+.main_img .inner{position:relative;}
+.m_left{position:absolute; top: 50px; left: 50px;}
+.m_left h1{ color:rgb(19, 19, 19); font-size:2.5em;}
+.m_left h2{ color:hotpink; font-size:1.5em;}
+.m_left p{ font-size: 0.8em; margin:10px 0;}
+.m_left button{border:initial; background-color: initial; border:1px solid #aaa; padding:5px 20px; font-size: 0.8em;}
+.m_right{position: absolute; top: 70px; right: 50px;  }
+.m_right h1{color:hotpink; font-size:2em;}
+.m_right h3{ color:rgb(100, 100, 100)}
+
+/********y_box*********/
+.y_box{background-color: rgb(255, 249, 185); width:100%; }
+.yb_left{float:left; width:40%;  box-sizing: border-box; padding-top:20px; text-align: center; }
+.yb_right{float:left; width:60%; padding-left:80px; box-sizing: border-box;}
+.y_box .inner::after, .y_box .inner::before{clear:both; content:""; display:block;}
+.yb_left img{width:100%; }
+.yb_right{padding-top:30px;}
+.yb_right p{font-size: 0.95em; }
+.yb_right h3{margin-top:30px; margin-bottom:10px; font-size:2em;}
+.yb_right button{margin-top:30px; border:initial; background-color: initial; border:1px solid #aaa; padding:5px 20px; font-size: 0.8em;}
+/********w_box*********/
+.w_box .inner {padding:20px;}
+.w_box .inner > h3{padding-bottom:5px;  border-bottom: 1px solid #ccc; text-align:center; width:450px;  margin:0 auto; }
+.wb_left{float:left; width:50%;  box-sizing: border-box;}
+.wb_right{float:left; width:50%; box-sizing: border-box; }
+.wb_set::after, .wb_set::before{clear:both; content: ""; display: block;}
+.wb_set{padding-top: 50px;}
+.wb_set h4{margin-bottom:10px;}
+.wb_set img{width:100%; }
+.wb_set p{font-size:0.9em;}
+.wb_set > div{width:50%;  } 
+.wb_left div{float:left;   box-sizing: border-box; padding-left:20px;}
+.wb_left::after, .wb_left::before{clear:both; content: ""; display: inline;}
+.wb_left div:nth-child(1){width:30%;}
+
+.wb_right div{float:left;  box-sizing: border-box; padding-left:20px;  }
+.wb_right::after, .wb_right::before{clear:both; content: ""; display: inline;}
+.wb_right div:nth-child(1){width:30%;}
+.w_box button {display: block;  margin:0 auto;  margin-top:30px; border:initial; background-color: initial; border:1px solid #aaa; padding:5px 20px; font-size: 0.8em;}
+.wb_bar{ background-color: #eee; height:100px;}
+
+/**************************footer**********************************************/
+footer{background-color: rgb(32, 32, 32); color:#ccc; padding:20px;}
+footer p{float:left; font-size:0.8em; padding-top:30px;}
+footer .f_right{float:right;}
+footer .inner::after, footer .inner::before{clear:both; display: block; content:"";}
+
+footer .f_right::after, footer .f_right::before{clear:both; content: ""; display: block;}
+footer .f_right li{padding-top:20px; float:left; padding-left:10px; }
+footer .f_right li img{ display: inline-block; margin-bottom:-10px; padding-left:10px; }
+
+
+/********************************************************서브페이지**********************************************************************************/
+.subTitle{background-color:#f9dde9; }
+
+.subTitle .inner{ text-align: center; width:100%;  height:200px ;  box-sizing: border-box;  background-image: url(../img/title-image.png);  background-repeat: no-repeat;  background-position: center; background-size: cover;}
+.subTitle h1{color:hotpink; padding-top:80px; box-sizing: border-box; }
+
+.step .inner{width:initial; width:50%; border:steelblue 100% solid;}
+.step > div{border-bottom:#757575 dashed 1px;  padding:20px;}
+.step div:last-child{border-bottom: none;}
+.step > div h2{font-size:1.1em; color:#161616; border-left:3px solid hotpink; padding-left:10px; text-align: left; margin-bottom:20px; }
+
+.stepBox1 h2, .stepBox1 > div{float:left;}
+.stepBox1 h2, .stepBox3 h2, .stepBox4 h2{width:150px; }
+.stepBox1::after, .stepBox1::before{clear:both; display: block; content: "";}
+.stepBox2{text-align: center;}
+.stepBox2 ul{margin-left:20px ;}
+.stepBox2 li{float:left; width:170px; margin:20px 14px; text-align: right;}
+.stepBox2 li button{background-color:gray; border:none; padding:5px; color:white; width:50%;}
+.stepBox2::after, .stepBox2::before{clear:both; display: block; content: "";}
+.stepBox3 h2, .stepBox3 > div{float:left;}
+.stepBox3::before, .stepBox3::after{clear:both; display:block; content:"";}
+.stepBox3 li::before{content: "ㆍ";}
+.stepBox3 li{margin:0 0 10px 0;}
+.stepBox4 h2, .stepBox4 > div{float:left;}
+.stepBox4::before, .stepBox4::after{clear:both; display:block; content:"";}
+.stepBox4 h3{margin-bottom:20px;}
+
+/*@media all and (max-width:600px){
+    .inner{width:initial; margin:initial; box-sizing: border-box;}
+    #wrap{position:initial; }
+    .w_left{float:none; display: none; }
+    .w_right{position:initial; width:initial; width:100%; left:0; }
+    .main_img{padding:initial; padding:2em;}
+    .m_left{position:initial;}
+    .m_right{position:initial;}
+    .m_left button{padding:5px 20px; margin: 0.5em; font-size: 2em; display: block;}
+    .m_left p{ font-size: 1.5em;}
+    .y_box{height:initial; width:initial; padding-bottom: 50px;}
+    .y_box .inner{width:initial; width:100%;}
+    .yb_left{float:none;  box-sizing: border-box; padding-top:20px; text-align: center; width:initial; width:100%; }
+    .yb_right{float:none; padding-left:initial; padding:20px; box-sizing: border-box; text-align:center; width:initial; width:100%;}
+    .yb_right p{text-align: left;}
+    .yb_right button{ font-size: 2em;}
+    .wb_left{float:none; width:100%;  }
+    .wb_right{float:none;}
+    .wb_set > div{width:100%;  } 
+    .wb_left div{float:none; margin:2em; }
+    .wb_right div{float:none; margin:2em; }
+    .w_box .inner{width:100%;}
+    .w_box .inner > h3{padding:initial; padding-bottom:1em; text-align: center; font-size: 1.5em;}
+    .w_box button {display: block;  margin:initial; margin-left:3em; font-size: 2em;}
+    footer p{float:none; font-size:1em; padding-top:30px;}
+    footer .f_right{float:none;}
+    footer .f_right li{float:none; padding-left:10px; }
+    footer .inner{ width:initial; width:100%;}
+    
+    //서브페이지
+   .subTitle{width:initial; width:100%; background-color:#f9dde9; }
+    .subTitle .inner{ width:initial; }
+    .stepBox1 h2, .stepBox1 > div{float:none;}
+    .stepBox2 li{float:none;}
+    .stepBox2 img{display: none;}
+    .stepBox3 h2, .stepBox3 > div{float:none;}
+    .stepBox4 h2, .stepBox4 > div{float:none;}
+    .w_right .inner{width:initial; width:100%;}
+ }*/
+
+/***선생님풀이***/
+
+
+/**************모바일용 햄버거바************************/
+    .btn_all {width:30px;height:30px;position:absolute;
+             top:30px;left:20px;
+             z-index:100; display: none;}
+    .btn_all span    
+    {
+    position: absolute;
+    left: 0;
+    height: 3px;
+    background-color:purple;
+    transition: all .2s ease-in-out;
+    width: 100%;
+    border-radius: 2px;
+    }
+    .btn_all span:nth-child(1){
+        top:0px;
+    }
+    .btn_all span:nth-child(2){
+        top:10px;
+        width:15px
+    }
+    .btn_all span:nth-child(3){
+        top: 20px;
+    }
+    
+    .btn_all.on{top:30px; left:210px;}
+    .btn_all.on span{background-color: orange}
+   .btn_all.on span:nth-child(1){
+        top:10px;
+        transform: rotate(45deg)
+    }
+    .btn_all.on span:nth-child(2){
+        top:10px;
+        width:0
+    }
+    .btn_all.on span:nth-child(3){
+        top: 10px;
+        transform: rotate(-45deg)
+    }
+ @media all and (max-width:600px){
+     /*공통*/
+     .inner{width:90%;}
+     /*wrap*/
+     .btn_all{display: block;}
+     aside.w_left{display:none;}
+     .w_right{width:100%; padding-top:80px;}
+     .m_left button, .y_box button, .w_box button{font-size: 2em; display: block; margin-bottom:15px;}
+
+     /*main*/
+     .m_left, .m_right{position:static;}/*static은 처음으로 되돌리는것*/
+
+     /*y_box*/
+     .y_box .inner div{float: none; width:100%;}
+     .yb_right{ padding-bottom:20px;}
+
+     /*w_box*/
+     .wb_set img{width:100%;}
+
+     .wb_set div{float: none; width:100%; margin-bottom:30px;}
+     
+
+     /*footer*/
+
+     footer .inner p{width: 100%; float:none;}
+     .f_right > li{float:none;}
+ }
+ 
